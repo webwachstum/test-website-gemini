@@ -1,73 +1,95 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Test-Website mit Gemini</title>
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f3f4f6;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 24px;
-      padding: 32px 40px;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
-      max-width: 520px;
-      text-align: center;
-    }
-    .badge {
-      display: inline-block;
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-    h1 {
-      margin: 0 0 12px;
-      font-size: 28px;
-    }
-    p {
-      margin: 0 0 16px;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
-      background: #000000;
-      color: #ffffff;
-    }
-    .hint {
-      margin-top: 12px;
-      font-size: 12px;
-      color: #9ca3af;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Wachstum | Websites, die überzeugen.</title>
+    <meta name="description" content="Web Wachstum — Wir bauen Ihnen eine moderne, performante Webpräsenz, die Kunden gewinnt. Webdesign, SEO & Entwicklung.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A1A3C', // Navy Blue
+                        accent: '#00E5FF', // Electric Cyan
+                        offwhite: '#F5F7FA',
+                        midgrey: '#CBD2D9',
+                        darkbg: '#050D1E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.8s ease-out forwards',
+                        'scroll': 'scroll 30s linear infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #F5F7FA;
+            color: #0A1A3C;
+            overflow-x: hidden;
+        }
+        .parallax-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F5F7FA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0A1A3C;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00E5FF;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
 <body>
-  <div class="card">
-    <div class="badge">Prototype</div>
-    <h1>Hallo von deiner Gemini-Testseite 👋</h1>
-    <p>Diese einfache Website wurde als <code>index.html</code> erstellt und ist bereit, über GitHub &amp; Vercel deployed zu werden.</p>
-    <a class="btn" href="mailto:deine-mail@example.com">Kontakt</a>
-    <div class="hint">Tausche Text &amp; Styles später einfach im Code aus.</div>
-  </div>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
